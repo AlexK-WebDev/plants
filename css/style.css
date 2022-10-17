@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'PENCIL SHARP';
-  src: url("/fonts/PENCIL_SHARP.eot");
-  src: url("/fonts/PENCIL_SHARP.eot?#iefix") format("embedded-opentype"), url("/fonts/PENCIL_SHARP.woff2") format("woff2"), url("/fonts/PENCIL_SHARP.woff") format("woff"), url("/fonts/PENCIL_SHARP.ttf") format("truetype"), url("/fonts/PENCIL_SHARP.svg#PENCIL_SHARP") format("svg");
+  src: url("../fonts/PENCIL_SHARP.eot");
+  src: url("../fonts/PENCIL_SHARP.eot?#iefix") format("embedded-opentype"), url("../fonts/PENCIL_SHARP.woff2") format("woff2"), url("../fonts/PENCIL_SHARP.woff") format("woff"), url("../fonts/PENCIL_SHARP.ttf") format("truetype"), url("../fonts/PENCIL_SHARP.svg#PENCIL_SHARP") format("svg");
   font-weight: 500;
   font-style: medium;
   font-display: swap;
