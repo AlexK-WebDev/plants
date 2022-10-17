@@ -39,6 +39,7 @@
 
 // Меню Бургер
 const iconMenu = document.querySelector('.menu__icon');
+const phoneHeader = document.querySelector('.header__menu-phones-top');
 const menuBody = document.querySelector('.menu__body');
 if(iconMenu){
     iconMenu.addEventListener('click', function(){
@@ -47,6 +48,13 @@ if(iconMenu){
         menuBody.classList.toggle('_active');
     });
 }
+
+if(phoneHeader){
+    iconMenu.addEventListener('click', function(){
+        phoneHeader.classList.toggle('_hide-phone');
+    });
+}
+
 
 //Плавная прокрутка по сайту с меню
 const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
