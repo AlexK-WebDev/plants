@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'PENCIL SHARP';
+    src: url('PENCIL_SHARP.eot');
+    src: url('PENCIL_SHARP.eot?#iefix') format('embedded-opentype'),
+        url('PENCIL_SHARP.woff2') format('woff2'),
+        url('PENCIL_SHARP.woff') format('woff'),
+        url('PENCIL_SHARP.ttf') format('truetype'),
+        url('PENCIL_SHARP.svg#PENCIL_SHARP') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
