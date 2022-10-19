@@ -131,35 +131,75 @@ body._lock {
 }
 
 .btn {
-  display: block;
-  letter-spacing: 0.00688rem;
-  text-transform: uppercase;
-  line-height: 1.2;
+  font-size: 18px;
+  line-height: 50px;
+  height: 50px;
   text-align: center;
-  background: #bbdbba;
-  padding: 0.625rem 0px 0.625rem 0px;
-  width: 11.25rem;
-  border: 2px solid #004943;
-  transition: all 0.3s ease 0s;
-  font-size: 17px;
+  width: 250px;
+  cursor: pointer;
+  color: #004943;
+  transition: all 0.3s;
+  position: relative;
 }
 
 @media (max-width: 1255px) {
   .btn {
-    font-size: calc(15px + 2 * ((100vw - 320px) / 935));
+    font-size: calc(15px + 3 * ((100vw - 320px) / 935));
   }
 }
 
-.btn:hover {
-  background-color: transparent;
+.btn span {
+  transition: all 0.3s;
 }
 
-.btn:hover a {
-  color: #004943;
+.btn::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: #00494377;
+  border-bottom-color: #00494377;
+  transform: scale(0.1, 1);
+}
+
+.btn:hover span {
+  letter-spacing: 2px;
+}
+
+.btn:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transition: all 0.3s;
+  background-color: rgba(124, 116, 116, 0.336);
+}
+
+.btn:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
 }
 
 .header {
   position: fixed;
+  z-index: 1;
   width: 100%;
   min-height: 80px;
   max-height: 136px;
@@ -498,28 +538,9 @@ body._lock {
   }
 }
 
-.btn-link {
-  font-size: 18px;
-  line-height: 1.4;
-  letter-spacing: 0.21px;
-  text-align: center;
-  color: #484f5b;
-}
-
-@media (max-width: 1255px) {
-  .btn-link {
-    font-size: calc(16px + 2 * ((100vw - 320px) / 935));
-  }
-}
-
-.about .about__btn {
-  margin-top: 50px;
-}
-
-@media (max-width: 1255px) {
-  .about .about__btn {
-    margin-top: calc(15px + 35 * ((100vw - 320px) / 935));
-  }
+.main__btn {
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 767.98px) {
@@ -615,6 +636,11 @@ body._lock {
   .about__text {
     margin-bottom: calc(20px + 12 * ((100vw - 320px) / 935));
   }
+}
+
+.about__btn {
+  display: flex;
+  justify-content: center;
 }
 
 .programs {
