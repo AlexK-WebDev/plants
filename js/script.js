@@ -1,41 +1,5 @@
 "use strict"
 //=================================================================================================================
-// Header Menu
-
-// Проверка экрана ПК или тачпада
-// let isMobile = {
-//     Android: function() {
-//         return navigator.userAgent.match(/Android/i);
-//     },
-//     BlackBerry: function() {
-//         return navigator.userAgent.match(/BlackBerry/i);
-//     },
-//     iOS: function() {
-//         return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-//     },
-//     Opera: function() {
-//         return navigator.userAgent.match(/Opera Mini/i);
-//     },
-//     Windows: function() {
-//         return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
-//     },
-//     any: function() {
-//         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-//     }
-// };
-
-// if ( isMobile.any()){
-//     document.body.classList.add('_touch');
-//     let menuArrows = document.querySelectorAll('.menu__arrow');
-//     if(menuArrows.length > 0){
-//         for(let i = 0; i < menuArrows.length; i++){
-//             let menuArrow = menuArrows[i];
-//             menuArrow.addEventListener('click', () => menuArrow.parentElement.classList.toggle('_active'));
-//         }
-//     }
-// } else {
-//     document.body.classList.add('_pc');
-// }
 
 // Меню Бургер
 const iconMenu = document.querySelector('.menu__icon');
@@ -57,16 +21,16 @@ if(phoneHeader){
 
 
 //Плавная прокрутка по сайту с меню
-const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
-if (menuLinks.length > 0){
-    menuLinks.forEach(menuLink => menuLink.addEventListener('click', onMenuLinkClick));
+const smoothLinks = document.querySelectorAll('.smooth-link[data-goto]');
+if (smoothLinks.length > 0){
+    smoothLinks.forEach(smoothLink => smoothLink.addEventListener('click', onSmoothLinkClick));
 }
 
-function onMenuLinkClick(event){
-    const menuLink = event.target;
+function onSmoothLinkClick(event){
+    const smoothLink = event.target;
 
-    if(menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)){
-        const gotoBlock = document.querySelector(menuLink.dataset.goto);
+    if(smoothLink.dataset.goto && document.querySelector(smoothLink.dataset.goto)){
+        const gotoBlock = document.querySelector(smoothLink.dataset.goto);
         const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector('header').offsetHeight;
         // const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
 
@@ -85,4 +49,81 @@ function onMenuLinkClick(event){
         event.preventDefault();
     }
 }
+
+// Форма обратной связи
+
+document.addEventListener('DOMContentLoaded', function(){
+    const form = document.getElementById('form');
+    form.addEventListener('submit', formSend);
+
+    async function formSend(e){
+        e.preventDefault();
+
+        let error = formValidate(form);
+        let formData = new FormData(form);
+
+        if(error === 0){
+            form.classList.add('_sending');
+            let response = await fetch('sendmail.php', {
+                metod: 'POST',
+                body: formData
+            });
+            if(response.ok){
+                let result = await response.json();
+                alert(result.message);
+                form.reset();
+                form.classList.remove('_sending');
+            }else{
+                alert('Error');
+                form.classList.remove('_sending');
+            }
+        }
+    }
+
+    function formValidate(form){
+        let error = 0;
+        let formReq = document.querySelectorAll('._req');
+
+        for (let i = 0; i < formReq.length; i++){
+            const input = formReq[i];
+            formRemoveError(input);
+
+            if(input.classList.contains('_phone')){
+                if(phoneTest(input)){
+                    formAddError(input);
+                    error++;
+                }
+            }else if(input.classList.contains('_email')) {
+                if(emailTest(input)){
+                    formAddError(input);
+                    error++;
+                }
+            } else {
+                if(input.value === ''){
+                    formAddError(input);
+                    error++;
+                }
+            }
+        }
+        return error;
+    }
+
+    function formAddError (input){
+        input.parentElement.classList.add('_error');
+        input.classList.add('_error');
+    }
+
+    function formRemoveError (input){
+        input.parentElement.classList.remove('_error');
+        input.classList.remove('_error');
+    }
+
+    function emailTest (input){
+        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+    }
+
+    function phoneTest (input){
+        return !/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/.test(input.value);
+    }
+})
 //============================================================================================

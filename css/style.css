@@ -709,6 +709,7 @@ form * {
   display: flex;
   justify-content: space-between;
   width: 600px;
+  position: relative;
 }
 
 @media (max-width: 767.98px) {
@@ -759,6 +760,24 @@ form * {
   }
 }
 
+.form__body::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/icons/loading.gif) center/100px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease 0s;
+}
+
+.form__body._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+
 .form__item {
   display: flex;
   flex-direction: column;
@@ -790,6 +809,10 @@ form * {
   .form__item .form__input {
     font-size: calc(18px + 2 * ((100vw - 320px) / 935));
   }
+}
+
+.form__item .form__input._error {
+  box-shadow: 0 0 3px #ff0000;
 }
 
 .form__item .form__input:focus {
