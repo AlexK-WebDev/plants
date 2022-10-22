@@ -694,6 +694,12 @@ body._lock {
   margin-bottom: 20px;
 }
 
+@media (min-width: 479.98px) {
+  .slide__item {
+    width: 250px;
+  }
+}
+
 @media (max-width: 1255px) {
   .slide__item {
     margin-right: calc(10px + 10 * ((100vw - 320px) / 935));
