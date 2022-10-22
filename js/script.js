@@ -126,4 +126,47 @@ document.addEventListener('DOMContentLoaded', function(){
         return !/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/.test(input.value);
     }
 })
+
+
+//SLIDER SWIPER
+// let swiper = new Swiper(".mySwiper", {
+//     slidesPerView: 1,
+//     spaceBetween: 30,
+//     loop: true,
+//     pagination: {
+//       el: ".swiper-pagination",
+//       clickable: true
+//     },
+//     navigation: {
+//       nextEl: ".swiper-button-next",
+//       prevEl: ".swiper-button-prev"
+//     }
+//   });
+
+  let swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 1,
+    slidesPerGroup: 3,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        767: {
+            slidesPerView: 2,
+        },
+        992: {
+            slidesPerView: 3,
+        }
+    },
+  });
 //============================================================================================
