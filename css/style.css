@@ -1144,7 +1144,7 @@ form * {
 }
 
 .dish-gardens {
-  background: url(/img/category/bg.jpg) center center/cover no-repeat;
+  background: url(../img/category/bg.jpg) center center/cover no-repeat;
   background-attachment: fixed;
   padding-top: 85px;
 }
