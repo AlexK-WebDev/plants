@@ -955,7 +955,7 @@ figure.effect-milo span {
 }
 
 .footer {
-  background-color: #e1dede;
+  background: url(../../img/footer/bg-1.jpg) center 10%/cover no-repeat;
   padding-top: 30px;
   padding-bottom: 50px;
 }
@@ -974,17 +974,9 @@ figure.effect-milo span {
 
 .footer__row {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
+  align-items: center;
   width: 100%;
-}
-
-@media (max-width: 992.98px) {
-  .footer__row .footer__col {
-    margin-bottom: 50px;
-  }
-  .footer__row .footer__col:last-child {
-    margin-bottom: 0px;
-  }
 }
 
 @media (max-width: 992.98px) {
@@ -1020,6 +1012,9 @@ form * {
   display: flex;
   justify-content: space-between;
   width: 600px;
+  border: 1px solid #00494371;
+  border-radius: 5px;
+  padding: 20px 25px;
   position: relative;
 }
 
