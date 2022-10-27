@@ -133,6 +133,7 @@ body._lock {
 .btn {
   font-size: 18px;
   line-height: 50px;
+  font-weight: 600;
   height: 50px;
   text-align: center;
   width: 250px;
@@ -1143,24 +1144,24 @@ form * {
   }
 }
 
-.dish-gardens {
+.products-page {
   background: url(../img/category/bg.jpg) center center/cover no-repeat;
   background-attachment: fixed;
   padding-top: 85px;
 }
 
 @media (max-width: 767.98px) {
-  .dish-gardens {
+  .products-page {
     padding-top: 105px;
   }
 }
 
-.dish-gardens .grid figure {
+.products-page .grid figure {
   width: 20%;
   min-width: 280px;
 }
 
-.dish-gardens .category__title {
+.products-page .category__title {
   margin-top: 20px;
 }
 
