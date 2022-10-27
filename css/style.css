@@ -474,7 +474,7 @@ body._lock {
 }
 
 .main {
-  background: url(../img/main/test-2.jpg) center center/cover no-repeat;
+  background: url(../img/main/bg.jpg) center center/cover no-repeat;
   padding-top: 25px;
   padding-bottom: 10px;
 }
@@ -494,7 +494,7 @@ body._lock {
 
 .main__image {
   order: 2;
-  background: url(../img/main/test-1.png) center 70%/72% no-repeat;
+  background: url(../img/main/main-img.png) center 70%/72% no-repeat;
   width: 600px;
   height: 626px;
   padding-right: 148px;
