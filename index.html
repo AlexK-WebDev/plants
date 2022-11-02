@@ -41,13 +41,8 @@
 	<!-- Google Tag Manager -->
     <!-- End Google Tag Manager -->
 
-    <!-- Font Awesome -->
-	<!-- <link rel="stylesheet" href="https://sh-guitardo.ru/wp-content/themes/guitardo/assets/font-awesome/css/all.min.css"> -->
-	<!-- Bootstrap Reboot CSS -->
-	<!-- <link rel="stylesheet" href="css/bootstrap-reboot.css"> -->
-	<!-- Bootstrap CSS -->
-	<!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
-
+	<!-- Animate CSS -->
+	<link rel="stylesheet" href="css/animate.css">
 
 	<!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
@@ -112,17 +107,17 @@
 	<section class="main">
 		<div class="container">
 			<div class="main__row">
-				<div class="main__image">
+				<div class="main__image wow fadeInRightBig">
 					<img src="./img/main/main-img.png" alt="Floorplants">
 				</div>
 				<div class="main__body">
-					<h1 class="main__title title">
+					<h1 class="main__title title wow slideInLeft">
 						30+ years of experience in growing houseplants 
 					</h1>
-					<div class="main__text text">
+					<div class="main__text text wow slideInLeft" data-wow-delay="0.5s">
 						Sophisticated blooming and foliage gardens, a great choice of bamboo, bonsai and succulent plants are grown with the greatest care and desinged for the wholesale customers by Garden Desings.
 					</div>
-					<div class="main__btn">
+					<div class="main__btn wow slideInLeft" data-wow-delay="0.75s">
 						<a data-goto=".footer" href="#" class="btn smooth-link">Contact Us</a>
 					</div>
 				</div>				
@@ -133,21 +128,21 @@
 		<div class="container">
 			<div class="about__row">
 				<div class="about__body">
-					<h2 class="about__title title">
+					<h2 class="about__title title wow slideInRight">
 						About <div class="nowrap">Garden Designs</div> 
 					</h2>
-					<p class="about__text text">
+					<p class="about__text text wow slideInRight" data-wow-delay="0.5s">
 						Garden Designs is the company which provides the houseplants, dish gardens, pots and different types of accessories for B2B sector during 30+ years.
 					</p>
-					<p class="about__text text">
+					<p class="about__text text wow slideInRight" data-wow-delay="0.75s">
 						Houseplants business is complicated business which requires loyalty and trustiness of the customers!
 						So we do our best to exceed the expectations and provide great customer service.
 					</p>
-					<div class="about__btn">
+					<div class="about__btn wow slideInRight" data-wow-delay="1s">
 						<a data-goto=".footer" href="#" class="btn smooth-link">Contact Us</a>
 					</div>
 				</div>
-				<div class="about__image">
+				<div class="about__image wow fadeInLeftBig">
 					<img src="./img/about/about.jpg" alt="Warehouse">
 				</div>
 			</div>
@@ -159,7 +154,7 @@
 				<h2 class="feedbacks__title">
 					Check Out Recent Review
 				</h2>
-				<div class="feedback__slider">
+				<div class="feedback__slider wow slideInRight">
 					<div class="swiper mySwiper">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
@@ -429,7 +424,7 @@
 				<h2 class="category__title">
 					Our products
 				</h2>
-				<div class="grid">
+				<div class="grid wow slideInLeft">
 				<figure class="effect-milo">
 					<img src="./img/category/1.jpg" alt="Dish Gardens"/>
 					<figcaption>					
@@ -518,6 +513,10 @@
 			</div>
 		</div>
 	</footer>	
+
+	<!-- WOW min js -->
+	<script src="./js/wow.min.js"></script>
+
 	<!-- Swiper JS -->
 	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 

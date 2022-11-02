@@ -1,6 +1,9 @@
 "use strict"
 //=================================================================================================================
+// WOW Animated Script
+new WOW().init();
 
+//============================================================================================
 // Меню Бургер
 const iconMenu = document.querySelector('.menu__icon');
 const phoneHeader = document.querySelector('.header__menu-phones-top');
@@ -146,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function(){
   let swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     spaceBetween: 1,
-    slidesPerGroup: 3,
+    slidesPerGroup: 2,
     loop: true,
     loopFillGroupWithBlank: true,
     pagination: {
