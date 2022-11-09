@@ -679,12 +679,12 @@ body._lock {
 
 .feedbacks__title {
   text-align: center;
-  font-size: 35px;
+  font-size: 45px;
 }
 
 @media (max-width: 1255px) {
   .feedbacks__title {
-    font-size: calc(20px + 15 * ((100vw - 320px) / 935));
+    font-size: calc(20px + 25 * ((100vw - 320px) / 935));
   }
 }
 
@@ -797,17 +797,6 @@ body._lock {
   }
 }
 
-.category__title {
-  text-align: center;
-  font-size: 35px;
-}
-
-@media (max-width: 1255px) {
-  .category__title {
-    font-size: calc(20px + 15 * ((100vw - 320px) / 935));
-  }
-}
-
 .grid {
   display: flex;
   justify-content: center;
@@ -819,7 +808,6 @@ body._lock {
   text-align: center;
 }
 
-/* Common style */
 .grid figure {
   width: 30%;
   position: relative;
@@ -861,8 +849,6 @@ body._lock {
   height: 100%;
 }
 
-/* Anchor will cover the whole item by default */
-/* For some effects it will show as a button */
 .grid figure figcaption > a {
   text-indent: 200%;
   white-space: nowrap;
