@@ -1158,6 +1158,11 @@ form * {
   text-align: center;
 }
 
+.test .plant__item {
+  width: 20%;
+  min-width: 250px;
+}
+
 .plant__title {
   font-weight: 800;
   font-size: 30px;
