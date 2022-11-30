@@ -136,6 +136,18 @@ body._lock {
   }
 }
 
+.plant__title {
+  font-size: 45px;
+  font-weight: bold;
+  letter-spacing: 0.75px;
+}
+
+@media (max-width: 1255px) {
+  .plant__title {
+    font-size: calc(20px + 25 * ((100vw - 320px) / 935));
+  }
+}
+
 .btn {
   font-size: 18px;
   line-height: 50px;
@@ -1138,6 +1150,10 @@ form * {
   margin-top: 20px;
 }
 
+.products-page .plant__title {
+  font-size: 30px;
+}
+
 .products__items {
   display: flex;
   flex-wrap: wrap;
@@ -1145,53 +1161,87 @@ form * {
   align-items: center;
 }
 
-.plant__item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 18%;
+.card {
+  /* position: absolute;
+    top: 50%;
+    left: 50%; */
+  display: block;
+  transform: translate(0%, 0%);
+  /* min-width: 220px; */
+  max-width: 280px;
+  /* height: 400px; */
+  /* background: #000; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
-  margin: 10px 1%;
-  padding: 0px 15px 25px 15px;
-  min-width: 220px;
-  text-align: center;
+  margin: 10px 10px;
 }
 
-.test .plant__item {
-  width: 20%;
-  min-width: 250px;
-}
-
-.plant__title {
-  font-weight: 800;
-  font-size: 30px;
-}
-
-.plant__image img {
+.card .image {
+  /* width: 100%; */
+  max-width: none;
   width: calc(100% + 20px);
-  min-height: 100%;
-  max-width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  /* overflow: hidden; */
 }
 
-.plant__size {
-  font-weight: 800;
-  font-size: 30px;
-}
-
-.price__items {
-  display: flex;
+.card .image img {
   width: 100%;
-  justify-content: space-around;
-  align-items: center;
+  transition: .4s;
 }
 
-.plant__price {
+.card:hover .image img {
+  opacity: .5;
+  transform: translateX(30%);
+  /*100%*/
+}
+
+.card .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  /*100%*/
+  height: 100%;
+  background: #e0cbbc;
+  transition: .4s;
+  transform-origin: left;
+  transform: perspective(2000px) rotateY(-90deg);
+}
+
+.card:hover .details {
+  transform: perspective(2000px) rotateY(0deg);
+}
+
+.card .details .center {
+  padding: 10px 10px 0px 10px;
+  /* text-align: center; */
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.card h4 {
+  text-align: center;
+  margin-bottom: 14px;
+  color: #b72233;
+  line-height: .8;
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.card .details .center p {
+  font-size: 18px;
+  line-height: .5;
+}
+
+.card ul li {
+  list-style-type: none;
+  margin-bottom: 12px;
+}
+
+.card ul li span {
+  font-size: 18px;
   font-weight: 600;
-  font-size: 25px;
-  margin-bottom: 5px;
-}
-
-.plant__text {
-  font-size: 20px;
 }
