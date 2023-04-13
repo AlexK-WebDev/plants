@@ -1220,7 +1220,11 @@ form * {
 
 .products-page .products__items .card .details .center ul li {
   list-style-type: none;
-  margin-bottom: 12px;
+  margin-bottom: 5px;
+}
+
+.products-page .products__items .card .details .center ul li:last-child {
+    margin-bottom: 15px;
 }
 
 .products-page .products__items .card .details .center ul li span {
